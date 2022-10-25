@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="q11.css" />
+    <script src="q11.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <div class="main">Text Calculator</div>
+    </h1>
+    <div class="salary">
+      <label>Monthly salary: </label>
+      <input
+        type="text"
+        id="Monthly"
+        placeholder="Enter salary"
+        onchange="taxcalulation(this.value)"
+      />
+      <br />
+      <br />
+      <textarea id="textt1"></textarea>
+      <textarea id="textt2"></textarea>
+      <textarea id="textt3"></textarea>
+      <textarea id="textt4"></textarea>
+    </div>
+
+    <style>
+      .main {
+        text-align: center;
+        background-color: rgb(119, 109, 109);
+        color: white;
+        font-size: larger;
+        margin-left: 25%;
+        margin-right: 25%;
+        height: 50%;
+        width: 70%;
+        border: pink;
+      }
+      /* .login {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+  } */
+      input[type="text"] {
+        width: 100%;
+
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid green;
+        box-sizing: border-box;
+      }
+      .salary {
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 30px;
+        background-color: rgb(218, 243, 252);
+        border-color: palevioletred;
+        width: 50%;
+        height: 300px;
+      }
+
+      #textt1 {
+        background-color: rgb(218, 243, 252);
+        width: 100%;
+
+        padding: 12px 20px;
+        display: inline-block;
+        border: white;
+        box-sizing: border-box;
+      }
+      #textt2 {
+        background-color: rgb(218, 243, 252);
+        width: 100%;
+
+        padding: 12px 20px;
+        display: inline-block;
+        border: white;
+        box-sizing: border-box;
+      }
+      #textt3 {
+        background-color: rgb(218, 243, 252);
+        width: 100%;
+
+        padding: 12px 20px;
+        display: inline-block;
+        border: white;
+        box-sizing: border-box;
+      }
+      #textt4 {
+        background-color: rgb(218, 243, 252);
+        width: 100%;
+
+        padding: 12px 20px;
+        display: inline-block;
+        border: white;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <script>
+      function taxcalulation() {
+        var monthlysalary = document.getElementById("Monthly").value;
+        var ele = monthlysalary;
+        var yearlysalary = monthlysalary * 12;
+        var montlytaxableamount;
+        var monthlysalaryaftertax;
+        var yearlytax;
+        var yearlyincomeaftertax;
+        if (yearlysalary < 600000) {
+          montlytaxableamount = 0;
+          monthlysalaryaftertax = monthlysalary;
+          yearlytax = 0;
+          yearlyincomeaftertax = monthlysalary;
+        }
+        var montlytaxableamount;
+        var monthlysalaryaftertax;
+        var yearlytax;
+        var yearlyincomeaftertax;
+
+        if (yearlysalary > 600000 && yearlysalary <= 1200000) {
+          montlytaxableamount = monthlysalary * 0.025;
+          monthlysalaryaftertax = monthlysalary - montlytaxableamount;
+          yearlytax = montlytaxableamount * 12;
+          yearlyincomeaftertax = yearlysalary - yearlytax;
+        }
+        if (yearlysalary > 1200000 && yearlysalary <= 2400000) {
+          montlytaxableamount = monthlysalary * 0.125 + 15000;
+          monthlysalaryaftertax = monthlysalary - montlytaxableamount;
+          yearlytax = montlytaxableamount * 12;
+          yearlyincomeaftertax = yearlysalary - yearlytax;
+        }
+        if (yearlysalary > 2400000 && yearlysalary <= 3600000) {
+          montlytaxableamount = monthlysalary * 0.2 + 165000;
+          monthlysalaryaftertax = monthlysalary - montlytaxableamount;
+          yearlytax = montlytaxableamount * 12;
+          yearlyincomeaftertax = yearlysalary - yearlytax;
+        }
+        if (yearlysalary > 3600000 && yearlysalary <= 6000000) {
+          montlytaxableamount = monthlysalary * 0.25 + 405000;
+          monthlysalaryaftertax = monthlysalary - montlytaxableamount;
+          yearlytax = montlytaxableamount * 12;
+          yearlyincomeaftertax = yearlysalary - yearlytax;
+        }
+        if (yearlysalary > 6000000 && yearlysalary <= 12000000) {
+          montlytaxableamount = monthlysalary * 3.25 + 1005000;
+          monthlysalaryaftertax = monthlysalary - montlytaxableamount;
+          yearlytax = montlytaxableamount * 12;
+          yearlyincomeaftertax = yearlysalary - yearlytax;
+        }
+        if (yearlysalary > 12000000) {
+          montlytaxableamount = monthlysalary * 0.35 + 2955000;
+          monthlysalaryaftertax = monthlysalary - montlytaxableamount;
+          yearlytax = montlytaxableamount * 12;
+          yearlyincomeaftertax = yearlysalary - yearlytax;
+        }
+        console.log(montlytaxableamount);
+        console.log(monthlysalaryaftertax);
+        console.log(yearlytax);
+        console.log(yearlyincomeaftertax);
+        document.getElementById("textt1").innerHTML = montlytaxableamount;
+        document.getElementById("textt2").innerHTML = monthlysalaryaftertax;
+        document.getElementById("textt3").innerHTML = yearlytax;
+        document.getElementById("textt4").innerHTML = yearlyincomeaftertax;
+      }
+    </script>
+  </body>
+</html>

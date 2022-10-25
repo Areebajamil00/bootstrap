@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Page Title</title>
+<link rel="stylesheet" href="q10.css">
+
+<script src="q10.js"></script>
+</head>
+<body>
+<div class="maincontainer">
+    <form id="form"  >
+        <h2>Fill your Interest</h2>
+        <p>just add random text here and check is it displayed or not </p>
+        <label for="fname">Name</label>
+        <div id="error"></div>
+        <br>
+        <input type="text" id="fname" name="fname"></input>
+        <br><br>
+        <label for="fname">Email</label>
+        <br><br>
+        <input type="text" id="email" name="email"></input>
+        <div id="error1"></div>
+        <br><br>
+        <label for="birthday">DOB</label>
+        <br><br>
+        <input type="date" id="birthday" name="birthday"></input>
+        <div id="error3"></div>
+        <br><br>
+
+        <label for="lang">Select your interest</label>
+        <br>
+        <select class="option" id="selection">
+         <br>
+        <option value="none" selected="" disabled="" hidden="">-select-</option>
+        <option value="Interest1">interest1</option>
+         <option value="saab">Interest2</option>
+        <option value="Interest1">Interest3</option>
+        <option value="Interest1">Interest4</option>
+        </select>
+        <div id="error4"></div>
+        <br><br>
+        <label class="check">Individual &nbsp
+        <input type="checkbox" >
+    
+        </label>
+        
+
+        <label class="check">organization &nbsp
+         <input type="checkbox" >
+   
+         <br><br>
+        <labe>About you</label>
+        <br><br>
+        <textarea  class="text"></textarea>
+        <br><br>
+        <button type="submit"  id="btn" onclick="myfun()" >send Detail</button>
+    </form>
+   
+</div>
+</body>
+</html>
